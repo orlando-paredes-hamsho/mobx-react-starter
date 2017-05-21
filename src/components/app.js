@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
 export default class App extends Component {
-	render() {
+	render(){
 		return (
-			<div>React Mobx Starter</div>
+			<div>
+				<h3>Employee Directory</h3>
+			</div>
 		);
 	}
 }
