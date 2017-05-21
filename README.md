@@ -23,11 +23,33 @@ Then once it's downloaded
 From your terminal run:
 
 ```bash
-    npm run start 
+    npm run start
 ```
 
-Or in cloud 9:
+## Additional Scripts ##
+
+### For testing:
 
 ```bash
-    npm run cloud
+    npm run test
 ```
+
+Testing will also run **prior to pushing to a remote server.**
+
+### For Linting:
+
+```bash
+    npm run lint
+```
+
+Linting will also run **prior to commiting and/or pushing to a remote server.**
+
+### Building:
+
+```bash
+    npm run build
+```
+
+## Watch this code live ##
+
+You can see a live version of this code on http://codepen.io/orliph/pen/pgmGjr?editors=1010
