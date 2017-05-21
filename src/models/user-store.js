@@ -22,7 +22,7 @@ class UserStore {
 	}
 }
 
-const users = new UserStore();
+const store = new UserStore();
 
-export default users;
+export default store;
 export { UserStore };
