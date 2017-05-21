@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "git@github.com:orlando-paredes-hamsho/mobx-react-starter.git",
   "scripts": {
-	"build": "webpack --config webpack.config.js ",
+    "build": "webpack --config webpack.config.js ",
     "start": "webpack-dev-server --config webpack.config.js --hot --inline",
     "test": "mocha --compilers js:babel-core/register --require ./test/setup.js --recursive ./test/**/*.test.js",
     "test:watch": "npm run test -- --watch",
@@ -42,9 +42,11 @@
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "babel-preset-stage-1": "^6.22.0",
     "mobx": "^3.1.9",
     "mobx-react": "^4.1.8",
+    "prop-types": "^15.5.10",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^4.0.0"
