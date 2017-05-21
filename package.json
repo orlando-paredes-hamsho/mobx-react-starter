@@ -6,7 +6,6 @@
   "repository": "git@github.com:orlando-paredes-hamsho/react-redux-scaffold.git",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js --hot --inline",
-    "cloud": "webpack-dev-server  --host $IP --port $PORT  --hot --inline",
     "test": "mocha --compilers js:babel-core/register --require ./test/setup.js --recursive ./test/**/*.test.js",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint ./src"
