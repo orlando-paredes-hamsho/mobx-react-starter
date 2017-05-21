@@ -1,15 +1,15 @@
-# React Redux Scaffold
+# Mobx React Starter
 
 ## About ##
 
-Scaffold for developing apps with react and redux
+Starter Package for upcomming Mobx React Tutorial
 
 ## Install ##
 
 From your terminal run:
 
 ```bash
-    git clone git@github.com:orlando-paredes-hamsho/react-redux-scaffold.git
+    git clone git@github.com:orlando-paredes-hamsho/mobx-react-starter.git
 ```
 
 Then once it's downloaded
@@ -31,19 +31,3 @@ Or in cloud 9:
 ```bash
     npm run cloud
 ```
-
-## Before Working on the file ##
-
-Always remember to:
-
-```bash
-    git pull
-```
-
-Then once it's downloaded
-
-```bash
-    npm install
-```
-
-This will get your files up to date and you will be able to continue working.
