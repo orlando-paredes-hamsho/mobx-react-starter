@@ -1,48 +1,42 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import _ from 'lodash';
+import { observer } from 'mobx-react';
+import { PropTypes } from 'mobx-react';
 
 import Selection from './selection';
 import Profile from './profile';
 
-export default class App extends Component {
-	constructor(props){
-		super(props);
-		this.state = { users: [], userId: null, user: null };
-	}
+const propTypes = {
+	store: PropTypes.object
+};
+
+//Observers can react (ba dum tss) to changes in observables
+@observer
+class App extends Component {
 
 	componentWillMount() {
-		axios.get('http://jsonplaceholder.typicode.com/users')
-		.then((response) => {
-			this.setState({ users: response.data });
-		});
-	}
-
-	handleProfileClick(user){
-		this.setState({ userId: user.id, user: user });
-	}
-
-	handleButtonClick(){
-		this.setState({ userId: null, user: null });
+		this.props.store.getUsers();
 	}
 
 	renderSelection(){
+		if (_.isEmpty(this.props.store.selectedUser)) return <noscript />;
 		return (
 			<div className='selection'>
-				<Selection user={this.state.user}/>
-				<button onClick={() => {this.handleButtonClick();}}>Close Profile</button>
+				<Selection user={this.props.store.selectedUser}/>
+				<button onClick={() => {this.props.store.selectUser({});}}>Close Profile</button>
 			</div>
 		);
 	}
 
 	renderProfiles(){
-		return this.state.users.map((user) => {
+		return this.props.store.users.map((user) => {
 			return (
 				<Profile
-					selected = {user.id === this.state.userId}
+					selected = {user.id === this.props.store.selectedUser.id}
 					key = {user.id}
 					user = {user}
-					onClick = { () => {this.handleProfileClick(user);} }
-				/>
+					onClick = { () => {this.props.store.selectUser(user);} }
+					/>
 			);
 		});
 	}
@@ -51,9 +45,13 @@ export default class App extends Component {
 		return (
 			<div>
 				<h3>Employee Directory</h3>
-				{(this.state.user) ? this.renderSelection() : null }
+				{this.renderSelection()}
 				{this.renderProfiles()}
 			</div>
 		);
 	}
 }
+
+App.propTypes = propTypes;
+
+export default App;

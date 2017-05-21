@@ -7,7 +7,7 @@ class UserStore {
 	//Observable values can be watched by Observers
 	@observable users = [];
 	@observable selectedUser = {};
-	constructor() {
+	@action getUsers() {
 		//Managing Async tasks like ajax calls with Mobx actions
 		axios.get('http://jsonplaceholder.typicode.com/users').then( response => {
 			this.setUsers(response.data);

@@ -2,12 +2,12 @@ import React from 'react';
 import chai, { expect } from 'chai';
 import { shallow } from 'enzyme';
 import chaiEnzyme from 'chai-enzyme';
-import App from '../../src/components/app';
+import Profile from '../../src/components/profile';
 
 chai.use(chaiEnzyme());
 
-describe('App' , () => {
+describe('Profile' , () => {
 	it('exists', () => {
-		expect(shallow(<App />).find('div')).to.exist;
+		expect(shallow(<Profile user={{}} />).find('li')).to.exist;
 	});
 });
