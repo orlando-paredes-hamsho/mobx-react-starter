@@ -7,7 +7,7 @@ import App from '../../src/components/app';
 chai.use(chaiEnzyme());
 
 describe('App' , () => {
-  it('exists', () => {
-    expect(shallow(<App />).find('div')).to.exist;
-  })
+	it('exists', () => {
+		expect(shallow(<App />).find('div')).to.exist;
+	});
 });
