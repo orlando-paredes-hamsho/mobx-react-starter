@@ -1,5 +1,7 @@
-import { observable, action } from 'mobx';
+import mobx, { observable, action } from 'mobx';
 import axios from 'axios';
+
+mobx.useStrict(true);
 
 class UserStore {
 	//Observable values can be watched by Observers
