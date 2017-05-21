@@ -1,0 +1,47 @@
+{
+  "name": "mobx-react-starter",
+  "version": "0.0.1",
+  "description": "Starter Package for upcomming Mobx React Tutorial",
+  "main": "index.js",
+  "repository": "git@github.com:orlando-paredes-hamsho/react-redux-scaffold.git",
+  "scripts": {
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "cloud": "webpack-dev-server  --host $IP --port $PORT  --hot --inline",
+    "test": "mocha --compilers js:babel-core/register --require ./test/setup.js --recursive ./test",
+    "test:watch": "npm run test -- --watch",
+    "lint": "eslint ./src"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "pre-push": [
+    "lint",
+    "test"
+  ],
+  "author": "Orlando Paredes Hamsho",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.4.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.6.1",
+    "cheerio": "^0.22.0",
+    "enzyme": "^2.8.2",
+    "eslint": "^3.17.1",
+    "eslint-plugin-react": "^6.10.0",
+    "jsdom": "9.12.0",
+    "mocha": "^3.4.1",
+    "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1",
+    "react-addons-test-utils": "^15.5.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "dependencies": {
+    "babel-preset-stage-1": "^6.22.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^4.0.0"
+  }
+}
