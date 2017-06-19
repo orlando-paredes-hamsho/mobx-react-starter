@@ -1,12 +1,13 @@
-import mobx, { observable, action } from 'mobx';
+import { observable, action, computed, useStrict } from 'mobx';
 import axios from 'axios';
 
-mobx.useStrict(true);
+useStrict(true);
 
 class UserStore {
 	//Observable values can be watched by Observers
 	@observable users = [];
 	@observable selectedUser = {};
+	@computed get selectedId() { return this.selectedUser.id; }
 	@action getUsers() {
 		//Managing Async tasks like ajax calls with Mobx actions
 		axios.get('http://jsonplaceholder.typicode.com/users').then( response => {
@@ -14,11 +15,14 @@ class UserStore {
 		});
 	}
 	//In strict mode, only actions can modify mobx state
-	@action setUsers(users) {
+	@action setUsers = (users) => {
 		this.users = [...users];
 	}
-	@action selectUser(user) {
+	@action selectUser = (user) => {
 		this.selectedUser = user;
+	}
+	@action clearSelectedUser = () => {
+		this.selectedUser = {};
 	}
 }
 

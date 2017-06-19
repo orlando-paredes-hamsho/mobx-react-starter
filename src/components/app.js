@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 import { observer } from 'mobx-react';
 import { PropTypes } from 'mobx-react';
+
+import _ from 'lodash';
 
 import Selection from './selection';
 import Profile from './profile';
@@ -23,7 +24,7 @@ class App extends Component {
 		return (
 			<div className='selection'>
 				<Selection user={this.props.store.selectedUser}/>
-				<button onClick={() => {this.props.store.selectUser({});}}>Close Profile</button>
+				<button onClick={this.props.store.clearSelectedUser}>Close Profile</button>
 			</div>
 		);
 	}
@@ -32,9 +33,9 @@ class App extends Component {
 		return this.props.store.users.map((user) => {
 			return (
 				<Profile
-					selected = {user.id === this.props.store.selectedUser.id}
+					selected = {user.id === this.props.store.selectedId}
 					key = {user.id}
-					user = {user}
+					label = {user.name}
 					onClick = { () => {this.props.store.selectUser(user);} }
 					/>
 			);

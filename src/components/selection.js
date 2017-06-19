@@ -5,13 +5,13 @@ const propTypes = {
 	user: PropTypes.object
 };
 
-const Selection = (props) => {
+const Selection = ({ user }) => {
 	return (
 		<ul>
-			<li><i className="fa fa-book fa-fw"></i> Name: {props.user.name}</li>
-			<li><i className="fa fa-user fa-fw"></i> Username: { props.user.username }</li>
-			<li><i className="fa fa-phone fa-fw"></i> Phone: {props.user.phone}</li>
-			<li><i className="fa fa-envelope fa-fw"></i> Email: <a href={'mailto:'+props.user.email}>{props.user.email}</a></li>
+			<li><i className="fa fa-book fa-fw"></i> Name: { user.name }</li>
+			<li><i className="fa fa-user fa-fw"></i> Username: { user.username }</li>
+			<li><i className="fa fa-phone fa-fw"></i> Phone: { user.phone }</li>
+			<li><i className="fa fa-envelope fa-fw"></i> Email: <a href={`mailto:${user.email}`}>{user.email}</a></li>
 		</ul>
 	);
 };

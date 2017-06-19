@@ -4,19 +4,18 @@ import PropTypes from 'prop-types';
 const propTypes = {
 	onClick: PropTypes.func,
 	selected: PropTypes.bool,
-	user: PropTypes.object,
+	label: PropTypes.string
 };
 
-const Profile = (props) => {
-	//If it's selected, highlight it.
-	const classes = props.selected ? 'bold' : '';
+const Profile = ({onClick, label, selected}) => {
+  //If it's selected, highlight it.
+	const classes = selected ? 'bold' : '';
 	return (
-		<li onClick={ props.onClick } className={classes}>
-			<i className="fa fa-user"></i> { props.user.name }
+		<li onClick={onClick} className={classes}>
+			{label}
 		</li>
 	);
 };
 
 Profile.propTypes = propTypes;
-
 export default Profile;
