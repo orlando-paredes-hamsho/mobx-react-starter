@@ -7,7 +7,7 @@
 	"scripts": {
 		"build": "webpack --config webpack.config.js ",
 		"start": "webpack-dev-server --config webpack.config.js --hot --inline",
-		"test": "mocha --compilers js:babel-core/register --require ./test/setup.js --recursive ./test/**/*.test.js",
+		"test": "mocha --require babel-core/register ./test/setup.js --recursive ./test/**/*.test.js",
 		"test:watch": "npm run test -- --watch",
 		"lint": "eslint ./src"
 	},
@@ -30,14 +30,14 @@
 		"chai": "^3.5.0",
 		"chai-enzyme": "^0.6.1",
 		"cheerio": "^0.22.0",
-		"enzyme": "^2.8.2",
+		"enzyme": "^3.10.0",
+		"enzyme-adapter-react-16": "^1.14.0",
 		"eslint": "^3.17.1",
 		"eslint-plugin-react": "^6.10.0",
 		"jsdom": "9.12.0",
 		"mocha": "^6.2.0",
 		"pre-commit": "^1.2.2",
 		"pre-push": "^0.1.1",
-		"react-addons-test-utils": "^15.5.1",
 		"webpack": "^2.2.1",
 		"webpack-dev-server": "^2.4.1"
 	},
