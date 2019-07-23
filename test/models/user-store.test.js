@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import store from '../../src/models/user-store';
+import store from '../../src/models/UserStore';
 
 describe('Model' , () => {
 	it('has an empty array of users', () => {

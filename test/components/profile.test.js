@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import Profile from '../../src/components/profile';
+import Profile from '../../src/components/Profile';
 
 describe('Profile' , () => {
 	it('exists', () => {
